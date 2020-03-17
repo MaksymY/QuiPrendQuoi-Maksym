@@ -1,3 +1,11 @@
 include ../partials/header.pug
 h1 Qui prend quoi ?
-p it work
+form(action="/party", method="post")
+	div
+		label(for="name") Nom de l'événement
+		input(name="name" id="name" required minlength="3" placeholder="Nouvel an")
+		label(for="author") Auteur
+		input(name="author" id="author" required minlength="3" placeholder="Arthure")
+		label(for="date") Date
+		input(name="date" id="date" type="date")
+	button(type="submit") Créer
