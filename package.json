@@ -1,0 +1,29 @@
+{
+  "name": "Qui_prend_quoi",
+  "version": "1.0.0",
+  "description": "Work for school.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaksymY/Qui_prend_quoi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaksymY/Qui_prend_quoi/issues"
+  },
+  "homepage": "https://github.com/MaksymY/Qui_prend_quoi#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
