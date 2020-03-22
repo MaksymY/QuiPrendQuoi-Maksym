@@ -3,8 +3,11 @@ const app = express();
 const dotenv = require('dotenv').config()
 const bodyParser = require('body-parser');
 const axios = require('axios');
+let fresh = false;
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.use(express.static('pwa'));
 app.set('view engine', 'pug');
 
 app.get('/', function(req, res) {
@@ -20,6 +23,8 @@ app.post('/party', function(req, res) {
 });
 
 app.get('/party/:id', function(req, res){
+	test()
+	function test(){
 	axios
 		.get(`${process.env.API_URL}/party/${req.params.id}`)
 		.then(({ data }) =>
@@ -28,8 +33,14 @@ app.get('/party/:id', function(req, res){
 				title: data.name,
 				url: `${process.env.FRONT_URL}:${process.env.PORT}/party/${data._id}`
 			}),
-  )
-  .catch((err) => console.log(err));
+		)
+		.then(() => 
+			setInterval(() => {
+				console.log("refresh")
+			}, 5000)
+		)
+		.catch((err) => console.log(err));
+	}
 })
 
 app.listen(process.env.PORT, () => 

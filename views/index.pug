@@ -1,7 +1,8 @@
 include ../partials/header.pug
 h1 Qui prend quoi ?
-form(action="/party", method="post")
-	div
+h2 Créer un événement
+form(action="/party", method="post").newParty
+	div.newParty__fields
 		label(for="name") Nom de l'événement
 		input(name="name" id="name" required minlength="3" placeholder="Nouvel an")
 		label(for="author") Auteur
